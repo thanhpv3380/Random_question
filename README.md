@@ -3,7 +3,7 @@
 # Tutorials
 You add a file excel that you want to test, fill the time or not.<br />
 File excel needs format: 
-![alt](https://res.cloudinary.com/dfbongzx0/image/upload/v1593147208/test_gypzw5.png =100x)
+![alt](https://res.cloudinary.com/dfbongzx0/image/upload/v1593147208/test_gypzw5.png)
 > 1. Col A: Question
 > 2. Col B: Answer A
 > 3. Col C: Answer B
