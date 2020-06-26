@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+//components
+import Main from './components/main/Main';
+import Practice from './components/practice/Practice';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [play, setPlay] = useState(false);
+    const [list, setList] = useState([]);
+    const [timer, setTimer] = useState(0);
+    const getList = (data)=>{
+        setList(data.list);
+        setTimer(data.timer);
+        setPlay(true);
+    }
+    return (
+        <div className="App">
+            {
+                !play ?
+                    <Main getList={getList} />  
+                :
+                    <Practice list={list} timer={timer} />
+            }
+        </div>
+    );
 }
 
 export default App;
