@@ -88,9 +88,9 @@ body {
     /* border-radius: 20px; */
     cursor: pointer;
 }
-.content .answer:hover{
-    background-color: #51554d;
-}
+/* .content .answer:hover{
+    background-color: #cccccc;
+} */
 .content .box-btn{
     text-align: center;
 }

@@ -52,13 +52,16 @@ function Practice(props) {
     const onHandleClickAnswer = (answer) => {
         let newDisplayResult = [...displayResult];
         let newResult = [...result];
-        newDisplayResult[quesNum - 1] = {
-            answer_1: '',
-            answer_2: '',
-            answer_3: '',
-            answer_4: ''
-        };
-        if (props.list[quesNum - 1].result === answer) {
+        // newDisplayResult[quesNum - 1] = {
+        //     answer_1: '',
+        //     answer_2: '',
+        //     answer_3: '',
+        //     answer_4: ''
+        // };
+        let rs = props.list[quesNum - 1].result.split(",");
+        let pos = rs.indexOf(answer.toString());
+        
+        if (pos >= 0) {
             //console.log('true');
             newResult[quesNum - 1] = true;
 
@@ -66,6 +69,8 @@ function Practice(props) {
             //console.log('false');
             newResult[quesNum - 1] = false;
         }
+        
+
         let style = newResult[quesNum - 1] ? 'box-green' : 'box-red';
 
         switch (answer) {
@@ -97,7 +102,7 @@ function Practice(props) {
             {timer ? <div className="timer"><i className="fa fa-clock-o">{timer}</i></div> : ''}
             <div className="content">
                 <div className="question">
-                    <span>Cau {quesNum}: </span>
+                    <span>Câu {quesNum}: </span>
                     <p>{props.list[quesNum - 1].question} </p>
 
                 </div>

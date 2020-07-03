@@ -27,7 +27,8 @@ function Main(props) {
                             list.push(data);
                         }
                     }
-                    console.log(list);
+
+                   // console.log(list);
                     props.getList({list, timer});
                 }
             });
